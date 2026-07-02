@@ -1,256 +1,251 @@
-diff --git a/C:\Users\HP\Documents\Codex\2026-07-02\mak\outputs\index.html b/C:\Users\HP\Documents\Codex\2026-07-02\mak\outputs\index.html
-new file mode 100644
---- /dev/null
-+++ b/C:\Users\HP\Documents\Codex\2026-07-02\mak\outputs\index.html
-@@ -0,0 +1,251 @@
-+<!doctype html>
-+<html lang="en">
-+  <head>
-+    <meta charset="utf-8" />
-+    <meta name="viewport" content="width=device-width, initial-scale=1" />
-+    <title>Rana Talukder | Academic Portfolio</title>
-+    <meta
-+      name="description"
-+      content="Academic portfolio for Rana Talukder, EEE graduate and solar-cell researcher."
-+    />
-+    <link rel="stylesheet" href="styles.css" />
-+  </head>
-+  <body>
-+    <header class="site-header">
-+      <a class="brand" href="#home" aria-label="Rana Talukder home">
-+        <span class="brand-mark">RT</span>
-+        <span>Rana Talukder</span>
-+      </a>
-+      <nav class="nav-links" aria-label="Primary navigation">
-+        <a href="#research">Research</a>
-+        <a href="#publications">Publications</a>
-+        <a href="#projects">Projects</a>
-+        <a href="#experience">Experience</a>
-+        <a href="#contact">Contact</a>
-+      </nav>
-+      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle color theme" title="Toggle theme">
-+        <span aria-hidden="true">◐</span>
-+      </button>
-+    </header>
-+
-+    <main>
-+      <section class="hero" id="home">
-+        <canvas id="solarCanvas" aria-label="Animated solar-cell research visual"></canvas>
-+        <div class="hero-content">
-+          <p class="eyebrow">EEE Graduate | Solar Cell Research | SCAPS-1D | ML</p>
-+          <h1>Rana Talukder</h1>
-+          <p class="hero-copy">
-+            Electrical and Electronics Engineering graduate from CUET focused on lead-free
-+            perovskite and tandem solar-cell performance, device simulation, and machine-learning
-+            aided current matching.
-+          </p>
-+          <div class="hero-actions">
-+            <a class="button primary" href="#publications">View Publications</a>
-+            <a class="button secondary" href="Rana-Talukder-CV.pdf" download>Download CV</a>
-+          </div>
-+        </div>
-+        <aside class="hero-panel" aria-label="Profile highlights">
-+          <div>
-+            <strong>3.50 / 4.00</strong>
-+            <span>CUET EEE CGPA</span>
-+          </div>
-+          <div>
-+            <strong>4</strong>
-+            <span>Research manuscripts</span>
-+          </div>
-+          <div>
-+            <strong>2026</strong>
-+            <span>Accepted journal article</span>
-+          </div>
-+        </aside>
-+      </section>
-+
-+      <section class="section intro-band" aria-label="Academic summary">
-+        <div>
-+          <p class="section-kicker">Academic Direction</p>
-+          <h2>Device simulation, clean energy materials, and applied computation.</h2>
-+        </div>
-+        <p>
-+          Rana's work combines SCAPS-1D modeling, tandem-cell optimization, DFT-informed material
-+          studies, and practical electrical engineering projects. The portfolio is tuned for lecturer
-+          applications, research collaborations, and early-career academic visibility.
-+        </p>
-+      </section>
-+
-+      <section class="section split" id="research">
-+        <div>
-+          <p class="section-kicker">Research Focus</p>
-+          <h2>KGeCl3 tandem solar cells with ML-aided current matching.</h2>
-+          <p>
-+            Undergraduate thesis supervised by Prof. Dr. Mahmud Abdul Matin Bhuiyan at CUET,
-+            completed from December 2024 to June 2025.
-+          </p>
-+          <ul class="clean-list">
-+            <li>Optimized top-cell thickness for current matching.</li>
-+            <li>Modeled tandem solar-cell performance with SCAPS-1D.</li>
-+            <li>Used machine learning to predict device-design parameters.</li>
-+          </ul>
-+        </div>
-+        <div class="research-lab" aria-label="Interactive research metrics">
-+          <div class="lab-header">
-+            <span>Simulation Lens</span>
-+            <output id="metricOutput">Current matching</output>
-+          </div>
-+          <input id="metricSlider" type="range" min="0" max="100" value="62" aria-label="Simulation lens" />
-+          <div class="cell-stack">
-+            <span class="layer layer-a"></span>
-+            <span class="layer layer-b"></span>
-+            <span class="layer layer-c"></span>
-+            <span class="layer layer-d"></span>
-+          </div>
-+          <p id="metricText">
-+            Balanced current flow improves tandem-cell efficiency by reducing mismatch losses between
-+            subcells.
-+          </p>
-+        </div>
-+      </section>
-+
-+      <section class="section" id="publications">
-+        <div class="section-heading">
-+          <div>
-+            <p class="section-kicker">Publications</p>
-+            <h2>Solar cells, materials modeling, and power electronics.</h2>
-+          </div>
-+          <div class="filter-bar" aria-label="Publication filters">
-+            <button class="filter active" type="button" data-filter="all">All</button>
-+            <button class="filter" type="button" data-filter="accepted">Accepted</button>
-+            <button class="filter" type="button" data-filter="review">Under review</button>
-+          </div>
-+        </div>
-+        <div class="publication-grid" id="publicationGrid">
-+          <article class="pub-card" data-status="accepted">
-+            <span class="status accepted">Accepted</span>
-+            <h3>Performance Analysis and Current Matching Optimization of KGeCl3 based Tandem Solar Cell</h3>
-+            <p>
-+              SCAPS-1D and machine-learning approach for tandem solar-cell design. Accepted in
-+              <em>Next Material</em> on April 4, 2026.
-+            </p>
-+            <a href="https://doi.org/10.1016/j.nxmate.2026.101978">DOI: 10.1016/j.nxmate.2026.101978</a>
-+          </article>
-+          <article class="pub-card" data-status="review">
-+            <span class="status review">Under Review</span>
-+            <h3>High-Efficiency Stable Ba3PBr3-Based Lead-Free Perovskite Solar Cells</h3>
-+            <p>
-+              DFT and SCAPS-1D modeling for stable lead-free perovskite solar-cell design.
-+              Submitted to <em>Results in Materials</em>.
-+            </p>
-+          </article>
-+          <article class="pub-card" data-status="review">
-+            <span class="status review">Under Review</span>
-+            <h3>Numerical Investigation of CsPbI2Br-based Perovskite Solar Cell</h3>
-+            <p>
-+              Comparative ETL and HTL analysis for perovskite device optimization. Submitted to
-+              <em>Journal of Chemistry</em>.
-+            </p>
-+          </article>
-+          <article class="pub-card" data-status="review">
-+            <span class="status review">Under Review</span>
-+            <h3>Destructive Interference Method for THD Reduction in Seven-Level CHB Inverters</h3>
-+            <p>
-+              Power-electronics method for total harmonic distortion reduction. Submitted to
-+              <em>Electric Power Systems Research</em>.
-+            </p>
-+          </article>
-+        </div>
-+      </section>
-+
-+      <section class="section split" id="projects">
-+        <div>
-+          <p class="section-kicker">Projects</p>
-+          <h2>Engineering projects across embedded systems and electrical design.</h2>
-+          <div class="project-tabs" role="tablist" aria-label="Project selector">
-+            <button class="tab active" type="button" data-project="counter">Counter</button>
-+            <button class="tab" type="button" data-project="distance">Distance</button>
-+            <button class="tab" type="button" data-project="building">Building</button>
-+          </div>
-+        </div>
-+        <article class="project-view" id="projectView">
-+          <p class="section-kicker">Arduino Uno + LCD</p>
-+          <h3>Three-Digit Object Counter</h3>
-+          <p>
-+            Designed a precise object counter using Arduino Uno and LCD output for clear live counts.
-+          </p>
-+        </article>
-+      </section>
-+
-+      <section class="section skill-section" aria-label="Technical skills">
-+        <div>
-+          <p class="section-kicker">Technical Stack</p>
-+          <h2>Tools used across simulation, programming, documentation, and design.</h2>
-+        </div>
-+        <div class="skill-cloud">
-+          <button type="button" data-skill="SCAPS-1D">SCAPS-1D</button>
-+          <button type="button" data-skill="COMSOL Multiphysics">COMSOL</button>
-+          <button type="button" data-skill="MATLAB">MATLAB</button>
-+          <button type="button" data-skill="Cadence Virtuoso">Cadence</button>
-+          <button type="button" data-skill="C and C++">C / C++</button>
-+          <button type="button" data-skill="Machine Learning fundamentals">ML Basics</button>
-+          <button type="button" data-skill="LaTeX academic writing">LaTeX</button>
-+          <button type="button" data-skill="AutoCAD electrical drafting">AutoCAD</button>
-+        </div>
-+        <p class="skill-note" id="skillNote">Select a tool to highlight Rana's working stack.</p>
-+      </section>
-+
-+      <section class="section timeline-section" id="experience">
-+        <div class="section-heading">
-+          <div>
-+            <p class="section-kicker">Experience</p>
-+            <h2>Academic training, field exposure, and leadership.</h2>
-+          </div>
-+        </div>
-+        <div class="timeline">
-+          <article>
-+            <time>2026</time>
-+            <h3>Journal Article Accepted</h3>
-+            <p>Lead author work accepted in <em>Next Material</em>.</p>
-+          </article>
-+          <article>
-+            <time>2025 - Present</time>
-+            <h3>Research Co-supervisor</h3>
-+            <p>CEMaterials and ML Lab, ResearchBuddyAI.</p>
-+          </article>
-+          <article>
-+            <time>2025</time>
-+            <h3>Power and Solar Training</h3>
-+            <p>EDGE Project power-system training and DIU solar-system design workshop.</p>
-+          </article>
-+          <article>
-+            <time>2024</time>
-+            <h3>Industrial Attachment</h3>
-+            <p>BTCL Transmission Exchange, Nandankanan Agrabad, Chittagong.</p>
-+          </article>
-+          <article>
-+            <time>2021 - 2025</time>
-+            <h3>Planning Secretary</h3>
-+            <p>Greater Mymensingh Association, CUET.</p>
-+          </article>
-+        </div>
-+      </section>
-+
-+      <section class="section contact-section" id="contact">
-+        <div>
-+          <p class="section-kicker">Contact</p>
-+          <h2>Available for lecturer roles, research collaboration, and academic projects.</h2>
-+        </div>
-+        <div class="contact-grid">
-+          <a href="mailto:ranatalukder1902177@gmail.com">ranatalukder1902177@gmail.com</a>
-+          <a href="tel:+8801645009067">+880 1645 009067</a>
-+          <a href="https://www.linkedin.com/in/rana-talukder">linkedin.com/in/rana-talukder</a>
-+          <span>Netrakona, Mymensingh, Bangladesh</span>
-+        </div>
-+      </section>
-+    </main>
-+
-+    <footer class="site-footer">
-+      <span>Rana Talukder</span>
-+      <a href="#home">Back to top</a>
-+    </footer>
-+
-+    <script src="app.js"></script>
-+  </body>
-+</html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rana Talukder | Academic Portfolio</title>
+    <meta
+      name="description"
+      content="Academic portfolio for Rana Talukder, EEE graduate and solar-cell researcher."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Rana Talukder home">
+        <span class="brand-mark">RT</span>
+        <span>Rana Talukder</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle color theme" title="Toggle theme">
+        <span aria-hidden="true">◐</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <canvas id="solarCanvas" aria-label="Animated solar-cell research visual"></canvas>
+        <div class="hero-content">
+          <p class="eyebrow">EEE Graduate | Solar Cell Research | SCAPS-1D | ML</p>
+          <h1>Rana Talukder</h1>
+          <p class="hero-copy">
+            Electrical and Electronics Engineering graduate from CUET focused on lead-free
+            perovskite and tandem solar-cell performance, device simulation, and machine-learning
+            aided current matching.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#publications">View Publications</a>
+            <a class="button secondary" href="Rana-Talukder-CV.pdf" download>Download CV</a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Profile highlights">
+          <div>
+            <strong>3.50 / 4.00</strong>
+            <span>CUET EEE CGPA</span>
+          </div>
+          <div>
+            <strong>4</strong>
+            <span>Research manuscripts</span>
+          </div>
+          <div>
+            <strong>2026</strong>
+            <span>Accepted journal article</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section intro-band" aria-label="Academic summary">
+        <div>
+          <p class="section-kicker">Academic Direction</p>
+          <h2>Device simulation, clean energy materials, and applied computation.</h2>
+        </div>
+        <p>
+          Rana's work combines SCAPS-1D modeling, tandem-cell optimization, DFT-informed material
+          studies, and practical electrical engineering projects. The portfolio is tuned for lecturer
+          applications, research collaborations, and early-career academic visibility.
+        </p>
+      </section>
+
+      <section class="section split" id="research">
+        <div>
+          <p class="section-kicker">Research Focus</p>
+          <h2>KGeCl3 tandem solar cells with ML-aided current matching.</h2>
+          <p>
+            Undergraduate thesis supervised by Prof. Dr. Mahmud Abdul Matin Bhuiyan at CUET,
+            completed from December 2024 to June 2025.
+          </p>
+          <ul class="clean-list">
+            <li>Optimized top-cell thickness for current matching.</li>
+            <li>Modeled tandem solar-cell performance with SCAPS-1D.</li>
+            <li>Used machine learning to predict device-design parameters.</li>
+          </ul>
+        </div>
+        <div class="research-lab" aria-label="Interactive research metrics">
+          <div class="lab-header">
+            <span>Simulation Lens</span>
+            <output id="metricOutput">Current matching</output>
+          </div>
+          <input id="metricSlider" type="range" min="0" max="100" value="62" aria-label="Simulation lens" />
+          <div class="cell-stack">
+            <span class="layer layer-a"></span>
+            <span class="layer layer-b"></span>
+            <span class="layer layer-c"></span>
+            <span class="layer layer-d"></span>
+          </div>
+          <p id="metricText">
+            Balanced current flow improves tandem-cell efficiency by reducing mismatch losses between
+            subcells.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="publications">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Publications</p>
+            <h2>Solar cells, materials modeling, and power electronics.</h2>
+          </div>
+          <div class="filter-bar" aria-label="Publication filters">
+            <button class="filter active" type="button" data-filter="all">All</button>
+            <button class="filter" type="button" data-filter="accepted">Accepted</button>
+            <button class="filter" type="button" data-filter="review">Under review</button>
+          </div>
+        </div>
+        <div class="publication-grid" id="publicationGrid">
+          <article class="pub-card" data-status="accepted">
+            <span class="status accepted">Accepted</span>
+            <h3>Performance Analysis and Current Matching Optimization of KGeCl3 based Tandem Solar Cell</h3>
+            <p>
+              SCAPS-1D and machine-learning approach for tandem solar-cell design. Accepted in
+              <em>Next Material</em> on April 4, 2026.
+            </p>
+            <a href="https://doi.org/10.1016/j.nxmate.2026.101978">DOI: 10.1016/j.nxmate.2026.101978</a>
+          </article>
+          <article class="pub-card" data-status="review">
+            <span class="status review">Under Review</span>
+            <h3>High-Efficiency Stable Ba3PBr3-Based Lead-Free Perovskite Solar Cells</h3>
+            <p>
+              DFT and SCAPS-1D modeling for stable lead-free perovskite solar-cell design.
+              Submitted to <em>Results in Materials</em>.
+            </p>
+          </article>
+          <article class="pub-card" data-status="review">
+            <span class="status review">Under Review</span>
+            <h3>Numerical Investigation of CsPbI2Br-based Perovskite Solar Cell</h3>
+            <p>
+              Comparative ETL and HTL analysis for perovskite device optimization. Submitted to
+              <em>Journal of Chemistry</em>.
+            </p>
+          </article>
+          <article class="pub-card" data-status="review">
+            <span class="status review">Under Review</span>
+            <h3>Destructive Interference Method for THD Reduction in Seven-Level CHB Inverters</h3>
+            <p>
+              Power-electronics method for total harmonic distortion reduction. Submitted to
+              <em>Electric Power Systems Research</em>.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="projects">
+        <div>
+          <p class="section-kicker">Projects</p>
+          <h2>Engineering projects across embedded systems and electrical design.</h2>
+          <div class="project-tabs" role="tablist" aria-label="Project selector">
+            <button class="tab active" type="button" data-project="counter">Counter</button>
+            <button class="tab" type="button" data-project="distance">Distance</button>
+            <button class="tab" type="button" data-project="building">Building</button>
+          </div>
+        </div>
+        <article class="project-view" id="projectView">
+          <p class="section-kicker">Arduino Uno + LCD</p>
+          <h3>Three-Digit Object Counter</h3>
+          <p>
+            Designed a precise object counter using Arduino Uno and LCD output for clear live counts.
+          </p>
+        </article>
+      </section>
+
+      <section class="section skill-section" aria-label="Technical skills">
+        <div>
+          <p class="section-kicker">Technical Stack</p>
+          <h2>Tools used across simulation, programming, documentation, and design.</h2>
+        </div>
+        <div class="skill-cloud">
+          <button type="button" data-skill="SCAPS-1D">SCAPS-1D</button>
+          <button type="button" data-skill="COMSOL Multiphysics">COMSOL</button>
+          <button type="button" data-skill="MATLAB">MATLAB</button>
+          <button type="button" data-skill="Cadence Virtuoso">Cadence</button>
+          <button type="button" data-skill="C and C++">C / C++</button>
+          <button type="button" data-skill="Machine Learning fundamentals">ML Basics</button>
+          <button type="button" data-skill="LaTeX academic writing">LaTeX</button>
+          <button type="button" data-skill="AutoCAD electrical drafting">AutoCAD</button>
+        </div>
+        <p class="skill-note" id="skillNote">Select a tool to highlight Rana's working stack.</p>
+      </section>
+
+      <section class="section timeline-section" id="experience">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Experience</p>
+            <h2>Academic training, field exposure, and leadership.</h2>
+          </div>
+        </div>
+        <div class="timeline">
+          <article>
+            <time>2026</time>
+            <h3>Journal Article Accepted</h3>
+            <p>Lead author work accepted in <em>Next Material</em>.</p>
+          </article>
+          <article>
+            <time>2025 - Present</time>
+            <h3>Research Co-supervisor</h3>
+            <p>CEMaterials and ML Lab, ResearchBuddyAI.</p>
+          </article>
+          <article>
+            <time>2025</time>
+            <h3>Power and Solar Training</h3>
+            <p>EDGE Project power-system training and DIU solar-system design workshop.</p>
+          </article>
+          <article>
+            <time>2024</time>
+            <h3>Industrial Attachment</h3>
+            <p>BTCL Transmission Exchange, Nandankanan Agrabad, Chittagong.</p>
+          </article>
+          <article>
+            <time>2021 - 2025</time>
+            <h3>Planning Secretary</h3>
+            <p>Greater Mymensingh Association, CUET.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div>
+          <p class="section-kicker">Contact</p>
+          <h2>Available for lecturer roles, research collaboration, and academic projects.</h2>
+        </div>
+        <div class="contact-grid">
+          <a href="mailto:ranatalukder1902177@gmail.com">ranatalukder1902177@gmail.com</a>
+          <a href="tel:+8801645009067">+880 1645 009067</a>
+          <a href="https://www.linkedin.com/in/rana-talukder">linkedin.com/in/rana-talukder</a>
+          <span>Netrakona, Mymensingh, Bangladesh</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Rana Talukder</span>
+      <a href="#home">Back to top</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
