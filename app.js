@@ -70,16 +70,13 @@ function drawSolarField(time) {
   const width = canvas.offsetWidth;
   const height = canvas.offsetHeight;
   ctx.clearRect(0, 0, width, height);
-
   const dark = body.classList.contains("dark");
   ctx.fillStyle = dark ? "#101512" : "#f7f5ef";
   ctx.fillRect(0, 0, width, height);
-
   const cols = Math.max(8, Math.floor(width / 130));
   const rows = Math.max(6, Math.floor(height / 95));
   const cellW = width / cols;
   const cellH = height / rows;
-
   for (let y = 0; y < rows; y += 1) {
     for (let x = 0; x < cols; x += 1) {
       const pulse = Math.sin(time * 0.0014 + x * 0.7 + y * 0.45);
@@ -93,8 +90,78 @@ function drawSolarField(time) {
       ctx.roundRect(px, py, cellW - 32, cellH - 28, 8);
       ctx.fill();
       ctx.stroke();
-
       ctx.fillStyle = dark ? "rgba(240, 190, 85, 0.24)" : "rgba(216, 166, 63, 0.26)";
       ctx.fillRect(px + 10, py + 12 + pulse * 3, cellW - 52, 3);
     }
   }
+  window.requestAnimationFrame(drawSolarField);
+}
+
+function updateMetric() {
+  const value = Number(metricSlider.value);
+  const state = metricStates.find((item) => value <= item.limit) || metricStates[metricStates.length - 1];
+  metricOutput.textContent = state.label;
+  metricText.textContent = state.text;
+}
+
+function applyFilter(filterValue) {
+  publications.forEach((card) => {
+    const matches = filterValue === "all" || card.dataset.status === filterValue;
+    card.classList.toggle("is-hidden", !matches);
+  });
+}
+
+function renderProject(key) {
+  const data = projectData[key];
+  if (!data) return;
+  projectView.innerHTML = `
+    <p class="section-kicker">${data.kicker}</p>
+    <h3>${data.title}</h3>
+    <p>${data.body}</p>
+  `;
+}
+
+// Theme toggle
+themeToggle.addEventListener("click", setTheme);
+
+// Metric slider
+metricSlider.addEventListener("input", updateMetric);
+
+// Publication filters
+filters.forEach((filter) => {
+  filter.addEventListener("click", () => {
+    filters.forEach((f) => f.classList.remove("active"));
+    filter.classList.add("active");
+    applyFilter(filter.dataset.filter);
+  });
+});
+
+// Project tabs
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    tabs.forEach((t) => t.classList.remove("active"));
+    tab.classList.add("active");
+    renderProject(tab.dataset.project);
+  });
+});
+
+// Skill cloud
+skillButtons.forEach((skillBtn) => {
+  skillBtn.addEventListener("click", () => {
+    const alreadyActive = skillBtn.classList.contains("active");
+    skillButtons.forEach((btn) => btn.classList.remove("active"));
+    if (!alreadyActive) {
+      skillBtn.classList.add("active");
+      skillNote.textContent = `Highlighted: ${skillBtn.dataset.skill}.`;
+    } else {
+      skillNote.textContent = "Select a tool to highlight Rana's working stack.";
+    }
+  });
+});
+
+// Init
+restoreTheme();
+resizeCanvas();
+updateMetric();
+window.requestAnimationFrame(drawSolarField);
+window.addEventListener("resize", resizeCanvas);
